@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Пример HTML-документа с демонстрацией CSS">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сайт с CSS</title>
+
+  <!-- 1. Импорт CSS -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab&display=swap');
+  </style>
+
+  <!-- 2. Внутренняя таблица стилей -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto Slab', serif;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+
+    header, footer {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5em;
+    }
+
+    nav a {
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      margin: 0 1em;
+    }
+
+    nav a:hover {
+      color: yellow;
+    }
+
+    table {
+      width: auto; /* <--- таблица уже */
+      border-collapse: collapse;
+      margin: 0 auto; /* центрирование */
+    }
+
+    table th, table td {
+      border: 1px solid black;
+      padding: 4px; /* уменьшен отступ */
+      background: linear-gradient(to right, #fefcea, #f1da36);
+    }
+
+    #form {
+      width: 400px; /* <--- форма уже */
+      margin: 0 auto;
+      background: #fff;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    #form input[type="text"],
+    #form input[type="email"],
+    #form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem; /* уменьшен отступ */
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    #form input:focus, #form textarea:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    }
+
+    ul, ol {
+      padding-left: 1.5em; /* чтобы были видны маркеры */
+      margin-bottom: 0.5em; /* меньше отступ после списков */
+    }
+
+    .scroll-down-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .scroll-down-btn:hover {
+      background-color: #0056b3;
+    }
+
+    h2::first-letter {
+      font-size: 2em;
+      color: red;
+    }
+
+    h3 + ul {
+      list-style-type: disc; /* <--- точки для списка после h3 */
+    }
+
+    ol {
+      list-style-type: decimal; /* <--- цифры для <ol> */
+    }
+
+    a[target="_blank"] {
+      color: orange;
+    }
+
+    img {
+      width: 300px;
+      height: auto;
+      border-radius: 50%;
+      border: 5px solid #555;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      display: block;
+      margin: 1rem auto;
+    }
+
+    button {
+      background: linear-gradient(to right, #4caf50, #81c784);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(0); }
+    }
+
+    main {
+      animation: slideIn 1s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 style="text-shadow: 2px 2px 5px gray;">Моё резюме</h1>
+    <nav>
+      <a href="#skills">Навыки</a> |
+      <a href="#media">Медиа</a> |
+      <a href="#form">Анкета</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Обо мне</h2>
+      <p>Привет! Меня зовут <em>Максим</em>. Я начинающий <u>веб-разработчик</u>, интересующийся <del>устаревшими</del> <strong>современными</strong> технологиями.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Мои навыки</h2>
+      <ul>
+        <li>HTML</li>
+        <li>C#</li>
+        <li>Python</li>
+        <li>Git & GitHub</li>
+      </ul>
+
+      <h3>Любимые блюда</h3>
+      <ol>
+        <li>Пицца</li>
+        <li>Суши</li>
+        <li>Борщ</li>
+      </ol>
+
+      <h3>Хобби</h3>
+      <ul>
+        <li>Чтение</li>
+        <li>Программирование</li>
+        <li>Музыка</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Фотография</h2>
+      <a href="media/kit.jfif" target="_blank">
+        <img src="media/kit.jfif" alt="Моё фото">
+      </a>
+    </section>
+
+    <section id="media">
+      <h2>Любимые исполнители и фильмы</h2>
+
+      <h3>Музыка</h3>
+      <audio controls>
+        <source src="media/Sigma.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио.
+      </audio>
+
+      <section>
+        <h2>Скачать музыку</h2>
+        <button onclick="downloadMusic()">Скачать</button>
+      </section>
+
+      <h3>Видео</h3>
+      <video controls width="320">
+        <source src="media/1!.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+      </video>
+    </section>
+
+    <section>
+      <h2>Моя учебная таблица</h2>
+      <table>
+        <tr>
+          <th rowspan="2">Язык</th>
+          <th colspan="2">Уровень</th>
+        </tr>
+        <tr>
+          <th>Теория</th>
+          <th>Практика</th>
+        </tr>
+        <tr>
+          <td>HTML</td>
+          <td>Отлично</td>
+          <td>Хорошо</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td>Хорошо</td>
+          <td>Хорошо</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="form">
+      <h2>Анкета</h2>
+      <form action="#" method="post">
+        <label for="name">Имя:</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="dob">Дата рождения:</label><br>
+        <input type="date" id="dob" name="dob"><br>
+
+        <label>Пол:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Мужской</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Женский</label><br>
+
+        <label for="about">О себе:</label><br>
+        <textarea id="about" name="about"></textarea><br>
+
+        <input type="submit" value="Отправить">
+        <input type="reset" value="Очистить">
+      </form>
+    </section>
+
+    <section>
+      <h2>Ссылки</h2>
+      <p><a href="https://github.com/GeL1en" target="_blank">Мой GitHub</a></p>
+      <p><a href="https://vk.com" target="_blank">Мой VK</a></p>
+    </section>
+
+    <section>
+      <h2>Спецсимволы</h2>
+      <p>Авторские права: &copy;</p>
+      <p>Знак евро: &euro;</p>
+      <p>Зарегистрированная торговая марка: &reg;</p>
+      <p>Меньше: &lt; , Больше: &gt;</p>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p>&copy; 2025 Максим</p>
+  </footer>
+
+  <button class="scroll-down-btn" onclick="scrollToBottom()">Вниз</button>
+
+  <script>
+    function scrollToBottom() {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+
+    function downloadMusic() {
+      const link = document.createElement('a');
+      link.href = 'media/Sigma.mp3';
+      link.setAttribute('download', 'Sigma.mp3');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+
+</body>
+</html>

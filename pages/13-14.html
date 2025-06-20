@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>ЛР 13-14</title>
+  <style>
+    #info {
+      margin: 20px;
+      padding: 10px;
+    }
+    .highlight {
+      color: red;
+      background-color: rgb(0, 4, 255);
+      font-family: Arial, sans-serif;
+      border: 1px solid green;
+    }
+    .error {
+      border: 2px solid red;
+    }
+    .tooltip {
+      color: red;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body onload="initPage()">
+  <!-- Задание 1 -->
+  <div id="info">
+    <div id="fullname">Логвинович Максим Сергеевич</div>
+    <img src="media/kit.jfif" alt="Изображение">
+  </div>
+
+  <!-- Кнопка для задания 3 -->
+  <button id="style-btn">Применить стили</button>
+
+  <!-- Кнопка для открытия нового окна с информацией -->
+  <button id="btn-browser-info" onclick="openBrowserInfoWindowOnce()">Показать информацию о системе</button>
+
+  <script src="js/java.js"></script>
+</body>
+</html>

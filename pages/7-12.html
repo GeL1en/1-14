@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сайт</title>
+  <link rel="stylesheet" href="styles/7-12.css " />
+  <script>
+    function showYear() {
+      const year = new Date().getFullYear();
+      alert("Текущий год: " + year);
+    }
+  </script>
+</head>
+<body>
+  <script>
+    function collectNames() {
+      const n = 15;
+      const total = n + 5;
+      const fullName = "Логвинович Максим"; // заранее заданное имя
+
+      const list = document.getElementById("name-list");
+      list.innerHTML = "";
+
+      for (let i = 1; i <= total; i++) {
+        const li = document.createElement("li");
+        li.textContent = `${i}. ${fullName}`;
+        list.appendChild(li);
+      }
+    }
+
+    function processArray() {
+      const input = prompt("Введите числа через запятую (например: 12,7,25,3,18):");
+      if (!input) {
+        alert("Массив не введён!");
+        return;
+      }
+    
+      // Преобразуем строку в массив чисел
+      const original = input.split(",").map(num => parseFloat(num.trim()));
+    
+      // Проверка на валидность
+      if (original.some(isNaN)) {
+        alert("Ошибка: введены некорректные значения.");
+        return;
+      }
+    
+      const min = Math.min(...original);
+      const modified = [...original];
+      modified[modified.length - 1] = min;
+    
+      const output = document.getElementById("array-output");
+      output.innerHTML = `
+        <p>Исходный массив: ${original.join(", ")}</p>
+        <p>Минимальное значение: ${min}</p>
+        <p>Изменённый массив: ${modified.join(", ")}</p>
+      `;
+    }
+  </script>  
+
+  <!-- Шапка -->
+  <header>
+    <div class="logo">🌱</div>
+    <h1>Адаптивный сайт</h1>
+  </header>
+
+  <!-- Гамбургер -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Меню</button>
+
+  <!-- Меню -->
+  <nav class="menu" id="nav-menu">
+    <div class="menu-item">Главная</div>
+    <div class="menu-item">О нас</div>
+    <div class="menu-item">Услуги</div>
+    <div class="menu-item">Контакты</div>
+  </nav>
+
+  <button onclick="showYear()">Показать год</button>
+  <button onclick="collectNames()">Вывести n+5 имён</button>
+  <ul id="name-list"></ul>
+  <button onclick="processArray()">Обработать массив</button>
+  <div id="array-output"></div>
+  <h3>Решение формулы</h3>
+  <input type="number" id="x-input" placeholder="Введите x">
+  <button onclick="showCalc()">Вычислить</button>
+  <p id="calc-result"></p>
+  <button onclick="workWithStrings()">Обработать строки</button>
+  <div id="string-result"></div>
+
+  <!-- Блоки -->
+<!-- Блоки 2–5 -->
+<div class="block-group block-group-1">
+  <div class="block-item block-serif">
+    <img src="https://ir.ozone.ru/s3/multimedia-1-o/w1200/6964748628.jpg" alt="Экология" />
+    <div>Блок 2 — Экология</div>
+  </div>
+  <div class="block-item block-sans">
+    <img src="https://i.ytimg.com/vi/BE276dcxBKk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGBEgXyhyMA8=&rs=AOn4CLBSOZ4cFTB7ZFE2wsIqE6xXcQKGeA" alt="Ресурсы" />
+    <div>Блок 3 — Ресурсы
+      Политика безопасности организации — это основополагающий документ, который определяет стандарты, правила и процессы для защиты технологических и информационных активов. Она служит отправной точкой для создания комплексной программы безопасности, задавая рамки для обеспечения безопасности информационных систем и сетей. Политика устанавливает цели, область действия и меры, необходимые для минимизации рисков и поддержания безопасной среды.
+    </div>
+  </div>
+  <div class="block-item block-cursive">
+    <img src="https://avatars.mds.yandex.net/get-altay/12851611/2a0000018e7e47e28b52286a56db87f0cc25/XXXL" alt="Переработка" />
+    <div>Блок 4 — Переработка</div>
+  </div>
+  <div class="block-item block-mono">
+    <img src="https://avatars.mds.yandex.net/i?id=acc59a606301888c355694cf81a56f7a478abd7e-5682066-images-thumbs&n=13" alt="Волонтёры" />
+    <div>Блок 5 — Волонтёры</div>
+  </div>
+</div>
+
+<!-- Блоки 6–10 -->
+<div class="block-group block-group-2">
+  <div class="block-item block-serif">
+    <div>Блок 6 — Боковая панель</div>
+  </div>
+  <div class="block-item block-sans">
+    <div>Блок 7 — Статья 1</div>
+  </div>
+  <div class="block-item block-cursive">
+    <div>Блок 8 — Статья 2</div>
+  </div>
+  <div class="block-item block-mono">
+    <div>Блок 9 — Баннер</div>
+  </div>
+  <div class="block-item block-serif">
+    <img src="https://sun9-34.userapi.com/impg/MkOfGXDrwxp3Zr1Brevw_ofJP0vzVtVMTQ0Nlw/iGQl7smTzbs.jpg?size=800x600&quality=96&sign=4b9995e6b601a7e208face1bbe7345c1&c_uniq_tag=A5SYDx8Gd8BoMdn_0amQEz3gxARDHs4Z_TDhtLF3QHM&type=album" alt="Новости" />
+    <div>Блок 10 — Новости</div>
+  </div>
+</div>
+
+
+  <div class="auth-comments">
+    <div class="block-item">Блок 11 — Авторизация</div>
+    <div class="block-item">Блок 12 — Комментарии</div>
+  </div>
+
+  <div class="full-width">Блок 13 — Галерея</div>
+  <div class="full-width">Блок 14 — Отзывы</div>
+
+  <!-- Блок 15 — Регистрация -->
+  <form class="registration-form" onsubmit="return validateRegistrationForm(event)">
+  <h2>Бесплатно зарегистрироваться</h2>
+
+  <div class="radio-group">
+    <label><input type="radio" name="role" checked /> Фрилансер</label>
+    <label><input type="radio" name="role" /> Работодатель</label>
+  </div>
+
+  <label>Email</label>
+  <input type="email" id="email" placeholder="Нигде не публикуется" />
+
+  <label>Логин</label>
+  <input type="text" id="login" placeholder="3–15 символов: латинские буквы, цифры, _ и -" />
+
+  <label>Пароль</label>
+  <input type="password" id="password" placeholder="От 6 до 24 символов" />
+
+  <label>Код с картинки</label>
+  <div class="captcha-block">
+    <img src="media/1.jpg" alt="Капча" />
+    <input type="text" id="captcha" placeholder="Введите код" />
+  </div>
+
+  <button type="submit">Зарегистрироваться</button>
+
+  <p class="agreement">
+    Нажимая на кнопку «Зарегистрироваться», я соглашаюсь с
+    <a href="#">публичной офертой</a> и <a href="#">правилами сайта</a>.
+  </p>
+</form>
+<div id="email-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:1000;">
+  <div style="background:white; padding:20px; border-radius:10px; max-width:300px; text-align:center; box-shadow:0 0 10px rgba(0,0,0,0.3);">
+    <h3>Недопустимый email</h3>
+    <p>Используйте один из разрешённых доменов:</p>
+    <ul style="text-align:left; margin:10px 0;">
+      <li>@gmail.com</li>
+      <li>@yandex.ru</li>
+      <li>@mail.ru</li>
+      <li>@outlook.com</li>
+      <li>@icloud.com</li>
+    </ul>
+    <button onclick="closeEmailModal()" style="margin-top:10px; padding:6px 12px;">Понятно</button>
+  </div>
+</div>
+
+
+  <!-- Блок 16 — Товар -->
+  <div class="product-card">
+    <div class="product-labels">
+      <span class="label recommend">СОВЕТУЕМ</span>
+      <span class="label new">НОВИНКА</span>
+    </div>
+    <img src="media/2.jpg" alt="Велосипед Stern Air 1.0" />
+    <h3>Велосипед Stern Air 1.0</h3>
+
+    <div class="rating-static">★★★★☆</div>
+    <div class="stock">✔ Много</div>
+
+    <div class="price">
+      <strong>18 899.10 руб.</strong>
+      <div class="old-price">20 999 руб.</div>
+      <div class="discount">Экономия <span>2 099.90 руб.</span></div>
+    </div>
+
+    <div class="timer-stock">
+      <div class="timer">
+        <div>До конца акции</div>
+        <div class="timer-boxes">
+          <div class="time-unit"><span>364</span><div>дн</div></div>
+          <div class="time-unit"><span>02</span><div>час</div></div>
+          <div class="time-unit"><span>01</span><div>мин</div></div>
+        </div>
+      </div>
+      <div class="left-count">
+        <div>Остаток</div>
+        <div class="left-box">2000 шт.</div>
+      </div>
+    </div>
+  </div>
+
+<!-- Кнопки -->
+<button onclick="alert('Вы нажали кнопку!')">Нажми меня</button>
+<ul>
+  <li><a href="#" onclick="runLogicExamples()">▶ Примеры операторов JS</a></li>
+</ul>
+<button onclick="runDialogs()">💬 Диалоговые окна</button>
+<button onclick="sayHello()">👋 Привет из атрибута</button>
+
+<!-- Вывод результатов -->
+<div id="js-output" style="margin:15px; padding:10px; background:#fff; border:1px solid #ccc; font-family:monospace;"></div>
+
+<script>
+  document.write("Пример встроенного скрипта — вывод на страницу");
+</script>
+
+
+<!-- Подключение внешнего скрипта -->
+<script src="js/js.js"></script>
+
+  <!-- Подвал -->
+  <footer>
+    <div>&copy; 2025 Все права защищены.</div>
+    <div>Телефон: +375 (15) 252-40-56</div>
+    <div>Адрес: г. Гродно, ул. Советских Пограничников, 2</div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

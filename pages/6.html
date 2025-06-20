@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Сайт</title>
+  <link rel="stylesheet" href="styles/6.css" />
+</head>
+<div>
+
+  <!-- Шапка -->
+  <header>
+    <div class="logo">🌱</div>
+    <h1>Адаптивный сайт</h1>
+  </header>
+
+  <!-- Гамбургер-кнопка -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Меню</button>
+
+  <!-- Меню -->
+  <nav class="menu" id="nav-menu">
+    <div class="menu-item">Главная</div>
+    <div class="menu-item">О нас</div>
+    <div class="menu-item">Услуги</div>
+    <div class="menu-item">Контакты</div>
+  </nav>
+
+  <!-- Новые блоки 2–5 -->
+  <div class="block-group block-group-1">
+    <div class="block-item">Блок 2 — Экология</div>
+    <div class="block-item">Блок 3 — Ресурсы</div>
+    <div class="block-item">Блок 4 — Переработка</div>
+    <div class="block-item">Блок 5 — Волонтёры</div>
+  </div>
+
+  <!-- Блоки 6–10 -->
+  <div class="block-group block-group-2">
+    <div class="block-item">Блок 6 — Боковая панель</div>
+    <div class="block-item">Блок 7 — Статья 1</div>
+    <div class="block-item">Блок 8 — Статья 2</div>
+    <div class="block-item">Блок 9 — Баннер</div>
+    <div class="block-item">Блок 10 — Новости</div>
+  </div>
+
+  <!-- Блоки 11–12 -->
+  <div class="auth-comments">
+    <div class="block-item">Блок 11 — Авторизация</div>
+    <div class="block-item">Блок 12 — Комментарии</div>
+  </div>
+
+  <!-- Галерея и отзывы -->
+  <div class="full-width">Блок 13 — Галерея</div>
+  <div class="full-width">Блок 14 — Отзывы</div>
+
+  <!-- Подвал -->
+  <footer>
+    <div>&copy; 2025 Все права защищены.</div>
+    <div>Телефон: +375 (15) 252-40-56</div>
+    <div>Адрес: г. Гродно, ул. Советских Пограничников, 2</div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

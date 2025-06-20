@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Пример HTML-документа с демонстрацией различных возможностей HTML5">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сайт</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table, th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+    img, video {
+      display: block;
+      margin: 0 auto;
+    }
+    .scroll-down-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Моё резюме</h1>
+    <nav>
+      <a href="#skills">Навыки</a> |
+      <a href="#media">Медиа</a> |
+      <a href="#form">Анкета</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Обо мне</h2>
+      <p>Привет! Меня зовут <em>Максим</em>. Я начинающий <u>веб-разработчик</u>, интересующийся <del>устаревшими</del> <strong>современными</strong> технологиями.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Мои навыки</h2>
+      <ul>
+        <li>HTML</li>
+        <li>C#</li>
+        <li>Python</li>
+        <li>Git & GitHub</li>
+      </ul>
+
+      <h3>Любимые блюда</h3>
+      <ol>
+        <li>Пицца</li>
+        <li>Суши</li>
+        <li>Борщ</li>
+      </ol>
+
+      <h3>Хобби</h3>
+      <ul>
+        <li>Чтение</li>
+        <li>Программирование</li>
+        <li>Музыка</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Фотография</h2>
+      <a href="media/kit.jfif" target="_blank">
+        <img src="media/kit.jfif" alt="Моё фото">
+      </a>
+    </section>
+    
+
+    <section id="media">
+      <h2>Любимые исполнители и фильмы</h2>
+
+      <h3>Музыка</h3>
+      <audio controls>
+        <source src="media/Sigma.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио.
+      </audio>
+      <section>
+        <h2>Скачать музыку</h2>
+        <button onclick="downloadMusic()">Скачать</button>
+      </section>
+      
+      <script>
+        function downloadMusic() {
+          const link = document.createElement('a');
+          link.href = 'media/Sigma.mp3'; // путь к твоему файлу
+          link.setAttribute('download', 'Sigma.mp3'); // имя сохраняемого файла
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+      </script>
+      
+      
+      
+      <h3>Видео</h3>
+      <video controls>
+        <source src="media/1!.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+      </video> 
+    </section>
+
+    <section>
+      <h2>Моя учебная таблица</h2>
+      <table>
+        <tr>
+          <th rowspan="2">Язык</th>
+          <th colspan="2">Уровень</th>
+        </tr>
+        <tr>
+          <th>Теория</th>
+          <th>Практика</th>
+        </tr>
+        <tr>
+          <td>HTML</td>
+          <td>Отлично</td>
+          <td>Хорошо</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td>Хорошо</td>
+          <td>Хорошо</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="form">
+      <h2>Анкета</h2>
+      <form action="#" method="post">
+        <label for="name">Имя:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="dob">Дата рождения:</label><br>
+        <input type="date" id="dob" name="dob"><br><br>
+
+        <label>Пол:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Мужской</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Женский</label><br><br>
+
+        <label for="about">О себе:</label><br>
+        <textarea id="about" name="about"></textarea><br><br>
+
+        <input type="submit" value="Отправить">
+        <input type="reset" value="Очистить">
+      </form>
+    </section>
+
+    <section>
+      <h2>Ссылки</h2>
+      <p><a href="https://github.com/GeL1en" target="_blank">Мой GitHub</a></p>
+      <p><a href="https://vk.com" target="_blank">Мой VK</a></p>
+    </section>
+
+    <section>
+      <h2>Спецсимволы</h2>
+      <p>Авторские права: &copy;</p>
+      <p>Знак евро: &euro;</p>
+      <p>Зарегистрированная торговая марка: &reg;</p>
+      <p>Меньше: &lt; , Больше: &gt;</p>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p>&copy; 2025 Максим</p>
+  </footer>
+
+  <!-- Кнопка прокрутки вниз -->
+  <button class="scroll-down-btn" onclick="scrollToBottom()">Вниз</button>
+
+  <script>
+    function scrollToBottom() {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+
+</body>
+</html>
